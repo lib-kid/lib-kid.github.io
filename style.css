@@ -145,6 +145,7 @@ overflow:hidden;
 .grid h3{
 padding:13px 0;
 margin-bottom:5px;
+font-size:14px;
 font-weight:bold;
 border-top:1px solid #ccc;
 border-bottom:1px solid #ccc;
@@ -358,7 +359,7 @@ border-bottom:2px solid #f0f0f0;
 }
 
 .post h3{
-margin:10px 0 30px;
+margin:40px 0 30px;
 padding-bottom:10px;
 font-size:110%;
 font-weight:normal;
@@ -386,7 +387,7 @@ border:1px solid #ccc;
 }
 
 .post table th{
-text-align:right;
+text-align:center;
 font-weight:bold;
 letter-spacing:1px;
 white-space:nowrap;
@@ -690,4 +691,16 @@ width:98%;
 }
 
 #sub .grid h3{padding:10px 5px;}
+}
+
+/* add */
+
+.chart{width:60%;
+  margin:50px auto;
+}
+
+input[type="checkbox"]{
+  display: block;
+  margin: auto;
+  transform: scale(1.5);
 }
