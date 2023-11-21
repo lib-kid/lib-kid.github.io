@@ -1102,6 +1102,11 @@ caption {
   height: 80%;
 }
 
+.minitable2 {
+  width: 90%;
+  height: 90%;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 110px;
@@ -1116,4 +1121,8 @@ html {
 
 strong {
   font-weight: bold;
+}
+
+.chosei {
+  height: 278px;
 }
