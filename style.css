@@ -1007,6 +1007,10 @@ input[type="checkbox"] {
     height: auto !important;
     width: auto !important;
   }
+
+  .no_print {
+    display: none;
+  }
 }
 
 .layout {
@@ -1125,4 +1129,8 @@ strong {
 
 .chosei {
   height: 278px;
+}
+
+.fontcolor {
+  color: #b6b6b6;
 }
