@@ -53,9 +53,40 @@
 				<article class="post">
 
 					<div class="no_print">
-						<p>使い方説明hogehoge
+
+						<img src="images/bikkuriman.png" alt="" class="alignright" />
+
+						<p>
+							教材をインストラクショナルデザインの観点から評価することができます。
+
+						<ul>
+							<li>チェックリストは，<strong>「コア」</strong>と<strong>「オプション」</strong>に分かれています。
+								<ul>
+									<li><strong>「コア」</strong>は，すべて満たすことが望ましい項目です。「学習目標」，「評価方法」，「教授方略」，「教材改善」の4つの分類にそれぞれ4項目，計16項目あります。
+									</li>
+									<li><strong>「オプション」</strong>（ARCSモデル）は，学習意欲を高める工夫の追加を検討される際に参考にしてほしい項目です（計12項目）。必ずすべてを満たす必要はないものの，独学用教材を作成するためには，学習者の学習意欲を高めることが学習成功の鍵になります。
+									</li>
+								</ul>
+							</li>
+							<li>各項目の<strong>【解説】</strong>リンクをクリックすると別タブで解説ページが開きます。満たしていない項目があれば，適宜，解説をご参照の上，できそうなところから改善に着手しましょう。
+							</li>
+							<li>チェック後に<strong>［結果を表示する］</strong>をクリックするとレーダーチャートが表示されます。</li>
+							<li>ページの最後にある<strong>［印刷する］</strong>ボタンを押すと評価の結果を印刷したりPDFで保存したりすることができます。入力フォーム（「日付」，「教材名」，ページ下部の「メモ」欄）に文字を入力すると，その文字が印刷時にも表示されます。
+							</li>
+						</ul>
 						</p>
 					</div>
+
+					<div>
+						日付
+						<!-- <span class="no_print">（チェックリストを印刷するときに必要に応じて入力してください）</span> -->
+					</div>
+					<textarea rows="2" cols="80" style="font-size:16px;"></textarea>
+					<div>
+						教材名
+						<!-- <span class="no_print">（チェックリストを印刷するときに必要に応じて入力してください）</span> -->
+					</div>
+					<textarea rows="2" cols="80" style="font-size:16px;"></textarea>
 
 					<h3>コア</h3>
 					<table>
@@ -163,8 +194,10 @@
 						</tbody>
 					</table>
 
-					<div class="btnright">
-						<button id="btn1" type="button">結果を表示する</button>
+					<div class="no_print">
+						<div class="btnright">
+							<button id="btn1" type="button">結果を表示する</button>
+						</div>
 					</div>
 
 					<div class="chart">
@@ -172,6 +205,8 @@
 							<canvas class="chart-canvas" id="myChart1" width="400" height="400"></canvas>
 						</div>
 					</div>
+
+					<div class="pagebreak"></div>
 
 					<h3>オプション</h3>
 					<table>
@@ -251,8 +286,10 @@
 						</tbody>
 					</table>
 
-					<div class="btnright">
-						<button id="btn2" type="button">結果を表示する</button>
+					<div class="no_print">
+						<div class="btnright">
+							<button id="btn2" type="button">結果を表示する</button>
+						</div>
 					</div>
 
 					<div class="chart">
@@ -265,32 +302,17 @@
 			</section>
 		</section>
 
-
-
-		<!-- あとでチェック -->
-
-		<div>
-			日付
-		</div>
-		<textarea rows="2" cols="80" style="font-size:16px;"></textarea>
-		<div>
-			教材名
-		</div>
-		<textarea rows="2" cols="80" style="font-size:16px;"></textarea>
-		<div>
+		<div style="font-size:14px;">
 			メモ
+			<!-- <span class="no_print">（チェックリストを印刷するときに必要に応じて入力してください）</span> -->
 		</div>
 		<textarea rows="4" cols="80" style="font-size:16px;"></textarea>
-
+		<br><br>
 		<div class="no_print">
 			<div class="print_button">
 				<button>印刷する</button>
 			</div>
 		</div>
-
-
-
-
 
 	</div>
 

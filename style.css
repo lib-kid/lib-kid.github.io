@@ -1011,6 +1011,10 @@ input[type="checkbox"] {
   .no_print {
     display: none;
   }
+
+  #header {
+    position: relative;
+  }
 }
 
 .layout {
@@ -1133,4 +1137,8 @@ strong {
 
 .fontcolor {
   color: #b6b6b6;
+}
+
+.pagebreak {
+  break-after: page;
 }
