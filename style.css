@@ -989,7 +989,7 @@ img.alignleft {
   width: 60%;
 }
 
-input[type="checkbox"] {
+.checklist input[type="checkbox"] {
   display: block;
   margin: auto;
   transform: scale(1.5);
@@ -1018,8 +1018,10 @@ input[type="checkbox"] {
 }
 
 .layout {
-  display: flex;
   /*サイドバーとメインコンテンツを横並びにする指定をした*/
+  display: flex;
+  /* 画面が小さくなると右側の解説がメニューの下に表示されるようにした（子要素の折り返し） */
+  flex-wrap: wrap;
 }
 
 .side {
@@ -1083,7 +1085,7 @@ input[type="checkbox"] {
 
 .content.right {
   /* background-color:#b3d874; */
-  width: 100%;
+  width: 610px;
   margin-left: 10px;
   /*サイドバーとメインコンテンツの間に隙間をあけた*/
 }
@@ -1141,4 +1143,24 @@ strong {
 
 .pagebreak {
   break-after: page;
+}
+
+.sage label {
+  display: block;
+  margin-bottom: 10px;
+  text-indent: -1em;
+  padding-left: 3em;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.each_explanation {
+  color: red;
+  margin-left: 50px;
+}
+
+.each_explanation p {
+  text-indent: 0px;
 }

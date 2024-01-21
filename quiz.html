@@ -12,9 +12,18 @@
 	<script src="js/html5.js"></script>
 	<script src="js/css3-mediaqueries.js"></script>
 	<![endif]-->
-	<script src="js/jquery1.4.4.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 	<script src="js/script.js"></script>
 	<link rel="icon" href="images/favicon.ico">
+	<style>
+		.frame :first-child {
+			margin-top: 0;
+		}
+
+		.frame :last-child {
+			margin-bottom: 0;
+		}
+	</style>
 </head>
 
 <body>
@@ -23,7 +32,7 @@
 		<div class="inner">
 			<div class="logo">
 				<a href="index.html" rel="home">LibKID<br /><span>情報リテラシー教育を担当する大学図書館員のためのID支援ツール</span></a>
-				<!-- <h1>hogehoge</h1> -->
+
 			</div>
 			<nav id="mainNav">
 				<div class="inner">
@@ -53,15 +62,790 @@
 						ワークシートやチェックリストの項目の意味を正しく理解しているかどうか確認することができます。是非，ワークシートやチェックリストを使う前にご活用ください。
 					</p>
 					<ul>
-						<li>クイズは全9問あります。各問題は2セット用意されており，ランダムでどちらか1問が出題されます。</li>
+						<li>クイズは全9問（チェックリストのコア項目に対応した5問＋オプション項目に対応した4問）あります。各問題は2セット用意されており，ランダムでどちらか1問が出題されます。</li>
 						<li>全問正解で合格です。全問正解すると子ヤギ（Kid）が褒めてくれます。</li>
 						<li>もちろん何度でも挑戦可能です。間違えた問題はリンク先の解説を読んで，理解を深めましょう。</li>
 					</ul>
 
-					<br>
-					<a href="resources/quiz.pdf" target="_blank">（評価用）クイズの設問及び回答一覧PDF</a>
+					<h3>クイズ1（チェックリストのコア項目に対応した5問）</h3>
+					<button class="btn" id="startBtn1">クイズスタート</button>
 
-					<p style="color:red;">→クイズの設問及び回答が確定したらクイズ形式に変換します。</p>
+					<div id="quizContainer1" style="display: none;" class="sage">
+
+						<div id="q1_1_1question" style="display: none;">
+							<h4>Q1</h4>
+							<p>
+								次の学習目標の内，学習目標を明確化させるための3要素である「目標行動」，「評価条件」，「合格基準」のすべてを含んでいる学習目標を<span
+									class="underline">すべて</span>選びなさい。
+							</p>
+							<div id="q1_1_1options">
+
+								<div><label><input type="checkbox" name="q1_1_1"
+											class="incorrect">データベースAで検索した文献の書誌情報と本文PDFを文献管理ツールBにインポートし，所定のフォルダに移動することができる。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×</p>
+										<p>
+											「目標行動」＝ OK<br>
+											「評価条件」＝ NG（評価条件の記載がありません）<br>
+											「合格基準」＝ NG（合格基準の記載がありません）<br>
+										</p>
+										<p>
+											例えば，評価条件として「ヘルプを見ずに」，合格基準として「スムーズに（1件あたり1分以内を目安に）行う」などを追加するとより明確な学習目標になります。<br>
+											改善例）データベースAで検索した文献の書誌情報と本文PDFを文献管理ツールBにインポートし，所定のフォルダに移動することができる。この作業をヘルプを見ずに，スムーズに（1件あたり1分以内を目安に）行うことができる。
+										</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q1_1_1"
+											class="incorrect">データベースC，データベースD，データベースEの特徴や違いについて知る。さらに，どのような時にどのデータベースを使えばよいのかについて学ぶ。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×</p>
+										<p>
+											「目標行動」＝ NG（「知る」「学ぶ」は目標行動ではありません）<br>
+											「評価条件」＝ NG（評価条件の記載がありません）<br>
+											「合格基準」＝ NG（合格基準の記載がありません）<br>
+										</p>
+										<p>
+											例えば，目標行動として「（特徴や違いについて）説明できる」や「（データベースを）選択できる」に言い換えるとより明確になります。さらに，例えば，評価条件として「マニュアルを見ながら」を追加し，合格基準として「最適な（データベースを選択できる）」（つまり，不適切なデータベースを選択したら不合格ということ）を追加すると3要素を満たしたことになります。<br>
+											改善例）データベースC，データベースD，データベースEのそれぞれの特徴や違いについて，マニュアルを見ながら説明することができる。さらに，必要に応じて最適なデータベースを選択することができる。
+										</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q1_1_1"
+											class="correct">授業の参考文献リストの書誌事項を何も見ずに正確に読み取り，その中からOPACの検索語を正しく選ぶことができる。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→○</p>
+										<p>
+											「目標行動」＝ OK<br>
+											「評価条件」＝ OK<br>
+											「合格基準」＝ OK（「正確に」や「正しく」が合格基準。事後テストでは満点が合格基準ということ）
+										</p>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="frame explanation" style="display: none;">
+								<p><strong class="answer1_1_1"></strong></p>
+								<p>学習目標の明確化3要素についての解説は，<a href="explanation.html#c2" target="_blank">こちら</a></p>
+							</div>
+						</div>
+
+						<div id="q1_1_2question" style="display: none;">
+							<h4>Q1</h4>
+							<p>
+								大学生の検索行動を観察した結果，OPACを使う際に，書名や誌名ではなく，章タイトルや論文名で検索してしまう大学1年生が多いことが分かった。そこで，参考文献リストが与えられた際に，書誌事項の内容を正しく読み取り，どの項目がOPACの検索語になり得るのか判断できるようになるような教材を作成したいと考えた。この教材の学習目標を仮に「参考文献リストを見てみよう！～効率的に資料検索を行うために～」とした場合，学習目標の明確化3要素の観点から以下の指摘の内で正しいものを<span
+									class="underline">すべて</span>選びなさい。
+							</p>
+							<div id="q1_1_2options">
+
+								<div><label><input type="checkbox" name="q1_1_2"
+											class="correct">「参考文献リストを見（る）」は，学習者の行動ではあるが，教材が目指すべき目標行動とはいえず，修正が必要である。
+									</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→○</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q1_1_2"
+											class="incorrect">「～効率的に資料検索を行うために～」という副タイトルが付いており，学習者に興味や関心を持ってもらえるような工夫がなされている。このように学習者のAttentionを引き付ける学習目標は，目標行動という点において適切である。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q1_1_2"
+											class="incorrect">「参考文献リストを」という何を見るかについての具体的な記載があるため，評価条件は適切である。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q1_1_2"
+											class="correct">合格基準についての記載がないため，例えば，参考文献リストから「資料名の部分だけを正しく選べれば合格」なのか，「資料名だけでなくすべての項目を正しく理解できていれば合格」なのかが分からない。合格基準の明確化が必要である。
+									</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→○</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q1_1_2"
+											class="incorrect">この学習目標は，「参考文献リストを見てみよう！」の部分が目標行動，「効率的に資料検索を行う」部分が評価条件と合格基準を示しているといえる。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×</p>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="frame explanation" style="display: none;">
+								<p><strong class="answer1_1_2"></strong></p>
+								<p>学習目標の明確化3要素についての解説は，<a href="explanation.html#c2" target="_blank">こちら</a></p>
+							</div>
+						</div>
+
+						<div id="q1_2_1question" style="display: none;">
+							<h4>Q2</h4>
+							<p>前提テスト，事前テスト，事後テストに関する以下の説明の内，正しいものを<span class="underline">すべて</span>選びなさい。</p>
+							<div id="q1_2_1options">
+
+								<div><label><input type="checkbox" name="q1_2_1"
+											class="correct">3種類のテストの内，教材学習前に行うのは前提テストと事前テスト，教材学習後に行うのは事後テストである。 </label>
+									<div class="each_explanation" style="display: none;">
+										<p>→○</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q1_2_1"
+											class="incorrect">論理演算子を使った検索式の立て方に関する教材を作成した。事前テストでは論理積や論理和といった基本的な検索式に関する問題を出題した。事後テストでは教材の学習成果を測るために事前テストよりも難しい問題（例えば，複数の論理演算子の組み合わせ）を出題し，学習者に学習の達成感を感じてもらうようにした。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q1_2_1"
+											class="incorrect">前提テストに合格した者は，すでに教材の学習目標を達成していると考えられるため，教材を使った学習は不要である。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q1_2_1"
+											class="incorrect">事前テストは，事前に身に付けておくべき知識やスキルが身に付いているかどうかを測るテストであり，事前テストに合格の者のみが学習に取り組むことになる。
+									</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×</p>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="frame explanation" style="display: none;">
+								<p><strong class="answer1_2_1"></strong></p>
+								<p>3種類のテストについての解説は，<a href="explanation.html#c3" target="_blank">こちら</a></p>
+							</div>
+						</div>
+
+						<div id="q1_2_2question" style="display: none;">
+							<h4>Q2</h4>
+							<p>前提テスト，事前テスト，事後テストに関する以下の説明の内，正しいものを<span class="underline">すべて</span>選びなさい。</p>
+							<div id="q1_2_2options">
+
+								<div><label><input type="checkbox" name="q1_2_2"
+											class="incorrect">前提テスト，事前テスト，事後テストの内，教材学習前に行うのは前提テストのみである。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q1_2_2"
+											class="incorrect">ILLの依頼の方法を学ぶ教材を作成した。これは，事前に文献検索の仕方を知っている者のみを対象にした教材なので，事前テストとして文献検索の知識を問う文章を教材の冒頭に挿入した。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q1_2_2"
+											class="correct">事前テストと事後テストは，実施の目的やタイミングは異なるが，どちらも学習目標を達成しているかどうかを測るためのテストといえるので，同レベルの問題を出題することにした。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→○</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q1_2_2"
+											class="incorrect">事後テストとは，教材学習後しばらく経った後に知識やスキルが定着しているかどうかを確認するためのテストであるから，学習直後に行うテストとは別に実施しなければならない。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×</p>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="frame explanation" style="display: none;">
+								<p><strong class="answer1_2_2"></strong></p>
+								<p>3種類のテストについての解説は，<a href="explanation.html#c3" target="_blank">こちら</a></p>
+							</div>
+						</div>
+
+						<div id="q1_3_1question" style="display: none;">
+							<h4>Q3</h4>
+							<p>課題分析の1つの手段である階層分析について，最も正しい説明を<span class="underline">一つ</span>選びなさい。</p>
+							<div id="q1_3_1options">
+
+
+								<div><label><input type="radio" name="q1_3_1"
+											class="correct">ゴールから順番に下位の学習目標を書き出していく。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→○</p>
+									</div>
+								</div>
+
+								<div><label><input type="radio" name="q1_3_1"
+											class="incorrect">学習者が一番最初に学ばなければならない内容を起点に，それよりも高度な学習目標を積み重ねていき，最終的な学習目標につながるように分析を行う。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×</p>
+									</div>
+								</div>
+
+								<div><label><input type="radio" name="q1_3_1"
+											class="incorrect">学習を開始する前の前提条件（入口）と，学習のゴール（出口）を明らかにした後，その入口と出口の間にどのような学習活動が必要か，まず順不同に可能な限り多く書き出してからそれらの配列を検討する。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×</p>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="frame explanation" style="display: none;">
+								<p><strong class="answer1_3_1"></strong></p>
+								<p>課題分析についての解説は，<a href="explanation.html#c4" target="_blank">こちら</a></p>
+							</div>
+						</div>
+
+						<div id="q1_3_2question" style="display: none;">
+							<h4>Q3</h4>
+							<p>「複数の論理演算子を用いた検索式を立てることができる」ことを最終の学習目標として教材を作成する場合，課題分析の1つの方法である階層分析を行う手順として最も適切だと考えられるものを<span
+									class="underline">一つ</span>選びなさい。
+							</p>
+							<div id="q1_3_2options">
+
+								<div><label><input type="radio" name="q1_3_2"
+											class="correct">最終の学習目標を起点に，その目標を達成するための前提条件「1つの論理演算子を用いた検索式を立てることができる」を書き出し，更にその前提条件となる「AND検索，OR検索，NOT検索の意味を説明できる」を書き出していくように，最終目標から遡って分析を行う。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→○</p>
+									</div>
+								</div>
+
+								<div><label><input type="radio" name="q1_3_2"
+											class="incorrect">最終の学習目標を達成するためには，学習の一番初めに論理演算子について理解しなければならない。このように，最初に習得すべきスキルを起点にして，内容が徐々にレベルアップしていくように分析を行う。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×</p>
+									</div>
+								</div>
+
+								<div><label><input type="radio" name="q1_3_2"
+											class="incorrect">最終の学習目標にたどり着くためには，AND検索やOR検索の意味を説明できるようになる必要があるし，複数の論理演算子を組み合わせる前に一つの論理演算子を正しく使えるようになる必要がある。このように，学ぶべき内容をとにかくたくさん書き出すところから分析を始める。なお，学ぶべき内容を書き出す作業は，可能であれば複数人で行うことが望ましい。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×</p>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="frame explanation" style="display: none;">
+								<p><strong class="answer1_3_2"></strong></p>
+								<p>課題分析についての解説は，<a href="explanation.html#c4" target="_blank">こちら</a></p>
+							</div>
+						</div>
+
+						<div id="q1_4_1question" style="display: none;">
+							<h4>Q4</h4>
+							<p>大学1年生向けに文献管理ツールの使い方に関する教材を作った。この教材の評価を行いたいと考えたとき，学習者検証の原理に基づく形成的評価として最も適切だと考えられるものを<span
+									class="underline">一つ</span>選びなさい。</p>
+							<div id="q1_4_1options">
+
+								<div><label><input type="radio" name="q1_4_1"
+											class="correct">文献管理ツールを使ったことがない大学1年生に教材を試用してもらい，学習が成立するか評価を行う。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→○</p>
+									</div>
+								</div>
+
+								<div><label><input type="radio" name="q1_4_1"
+											class="incorrect">文献管理ツールの使い方に詳しいほかの図書館員に教材を確認してもらい，記載内容に誤りがないか評価を行う。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×</p>
+									</div>
+								</div>
+
+								<div><label><input type="radio" name="q1_4_1"
+											class="incorrect">文献管理ツールを普段使っている教員に協力してもらい，専門家の視点から学生のための教材として適切かどうか評価を行う。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×</p>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="frame explanation" style="display: none;">
+								<p><strong class="answer1_4_1"></strong></p>
+								<p>教材作成時の評価と改善についての解説は，<a href="explanation.html#c7" target="_blank">こちら</a></p>
+							</div>
+						</div>
+
+						<div id="q1_4_2question" style="display: none;">
+							<h4>Q4</h4>
+							<p>文献の入手を担当している秘書のための教材を作った。この教材の評価を行いたいと考えたとき，学習者検証の原理に基づく形成的評価として最も適切だと考えられるものを<span
+									class="underline">一つ</span>選びなさい。</p>
+							<div id="q1_4_2options">
+
+								<div><label><input type="radio" name="q1_4_2"
+											class="correct">文献の入手方法に詳しくない秘書に教材を使ってもらい，学習目標を達成したかどうか評価を行う。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→○</p>
+									</div>
+								</div>
+
+								<div><label><input type="radio" name="q1_4_2"
+											class="incorrect">文献の入手方法に詳しいほかの図書館員に教材を見てもらい，記載内容に誤りがないか評価を行う。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×</p>
+									</div>
+								</div>
+
+								<div><label><input type="radio" name="q1_4_2"
+											class="incorrect">文献の入手を秘書に依頼している教員に教材を確認してもらい，教材の内容が教員の要望とマッチしているか評価を行う。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×</p>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="frame explanation" style="display: none;">
+								<p><strong class="answer1_4_2"></strong></p>
+								<p>教材作成時の評価と改善についての解説は，<a href="explanation.html#c7" target="_blank">こちら</a></p>
+							</div>
+						</div>
+
+						<div id="q1_5_1question" style="display: none;">
+							<h4>Q5</h4>
+							<p>情報リテラシー教育の一環として，学生を対象にした情報探索に関する教材を作成した。この教育の評価方法としてカークパトリックの4段階評価を用いた場合，レベル1～レベル3の実施例について，正しいと考えられるものを<span
+									class="underline">すべて</span>選びなさい。
+							</p>
+							<div id="q1_5_1options">
+
+								<div><label><input type="checkbox" name="q1_5_1" class="correct">
+										<ul>
+											<li>レベル1では，学習終了後の受講者に，教材を使ってみてどのように感じたかや満足度についてアンケート調査を行った。</li>
+											<li>レベル2では，学習前後のテスト結果を比較し，知識やスキルが向上しているかどうかを確認した。</li>
+											<li>レベル3では，学習終了の半年後に，身近な受講者（図書館アルバイトの学生など）に，教材で得た知識やスキルはその後の学習や研究に生かされているかインタビュー調査を行った。あわせて，関連する科目の担当教員に，学生の情報探索スキルについて，教材に書かれていることは実行できているかインタビュー調査を行った。
+											</li>
+										</ul>
+									</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→○</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q1_5_1" class="incorrect">
+										<ul>
+											<li>レベル1では，学習に入る前の受講者が，学習に必要となる知識やスキルをすでに有しているかテストを行った。</li>
+											<li>レベル2では，学習に入る前の受講者が，教材に書かれている内容をすでに知っているかテストを行った。</li>
+											<li>レベル3では，学習後の受講者が，教材の内容をどの程度理解したのかテストを行った。</li>
+										</ul>
+									</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×（前提テスト・事前テスト・事後テストの説明です。）</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q1_5_1" class="incorrect">
+										<ul>
+											<li>レベル1では，学習後の受講者が，情報探索の知識をどの程度身に付けたのかをテストした。</li>
+											<li>レベル2では，学習後の受講者が，情報探索のスキルをどの程度身に付けたのかをテストした。</li>
+											<li>レベル3では，学習後の受講者が，「今回学んだことを学習や研究に生かしたい」という態度をどの程度を身に付けたのかをインタビュー調査した。</li>
+										</ul>
+									</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×（カークパトリックの4段階評価とは，知識とスキルと態度をそれぞれ評価することではありません。）</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q1_5_1" class="incorrect">
+										<ul>
+											<li>レベル1では，学習が終わった後の受講者に，今回の学習体験の好感度についてアンケート調査を行った。</li>
+											<li>レベル2では，事後テストの結果を分析し，受講者が必要な知識やスキルを身に付けたのか調査を行った。</li>
+											<li>レベル3では，今回実施した情報リテラシー教育が大学の組織目標にどのような影響を与えたのか考察した。</li>
+										</ul>
+									</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×（レベル1：反応（Reaction），レベル2：学習（Learning），レベル4：結果（Results）に関する説明です。）</p>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="frame explanation" style="display: none;">
+								<p><strong class="answer1_5_1"></strong></p>
+								<p>カークパトリックの4段階評価についての解説は，<a href="explanation.html#c8" target="_blank">こちら</a></p>
+							</div>
+						</div>
+
+						<div id="q1_5_2question" style="display: none;">
+							<h4>Q5</h4>
+							<p>情報リテラシー教育の一環として，大学1年生を対象にした文献管理ツールの使い方に関する教材を作成した。この教育の評価方法としてカークパトリックの4段階評価を用いた場合，レベル1～レベル3の実施例について，正しいと考えられるものを<span
+									class="underline">すべて</span>選びなさい。</p>
+							<div id="q1_5_2options">
+
+								<div><label><input type="checkbox" name="q1_5_2" class="correct">
+										<ul>
+											<li>レベル1では，学習終了後の受講者に，(1)教材の分かりやすさ，(2)学習量の適当さ，(3)学習の満足度などに関するアンケート調査を行った。
+											</li>
+											<li>レベル2では，学習に取り組む前の受講者の知識やスキルの程度と事後テストの結果の比較分析を行った。</li>
+											<li>レベル3では，学習が終わってから2ヶ月後に，受講者全員に，教材で学んだ文献管理ツールの利用頻度などに関するアンケート調査を行った。</li>
+										</ul>
+									</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→○</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q1_5_2" class="incorrect">
+										<ul>
+											<li>レベル1では，学習後の受講者の反応を調べた。具体的には，受講後に，教材の印象や学習の満足度を問うアンケート調査を実施した。</li>
+											<li>レベル2では，学習後の受講者の行動がどのように変化したのかを調べた。具体的には，学習の3ヶ月後に，数名の受講者にインタビュー調査を実施した。
+											</li>
+											<li>レベル3では，今回の教育の成果を俯瞰的に把握することにした。具体的には，文献管理ツールの導入費用，大学1年生の当該ツールの利用者数，教材を使って学習した人数（受講者数），受講者のツール利用の習熟度などのデータを集めた。
+											</li>
+										</ul>
+									</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q1_5_2" class="incorrect">
+										<ul>
+											<li>レベル1では，学習後の受講者の反応を定量的に調べるため，選択回答式のアンケート調査を実施した。 </li>
+											<li>レベル2では，学習後の受講者の反応を定性的に調べるため，自由記述欄を設けたアンケート調査を実施した。</li>
+											<li>レベル3では，質問事項が予め決定しているアンケート調査だけでは調べきれない受講者の反応を確認するため，対面のインタビュー調査を行った。</li>
+										</ul>
+									</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q1_5_2" class="incorrect">
+										<ul>
+											<li>レベル1では，図書館員が客観的な評価を行った。具体的には，学習後の受講者にテストを行ってもらい，必要な知識やスキルを身に付けることができたのか調査を行った。
+											</li>
+											<li>レベル2では，受講者本人による自己評価を行ってもらった。具体的には，受講者に，学習以前と以後で知識やスキルがどのように変わったのかを振り返ってもらい，今回学んだ内容を今後どのように生かしていきたいか短い文章でまとめてもらった。
+											</li>
+											<li>レベル3では，受講者である学生の指導教員に他己評価を行ってもらった。具体的には，学習の数ヶ月後に，学習の以前と以後で学生にどのような変化が見られたのか，教員にインタビュー調査を行った。
+											</li>
+										</ul>
+									</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×</p>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="frame explanation" style="display: none;">
+								<p><strong class="answer1_5_2"></strong></p>
+								<p>カークパトリックの4段階評価についての解説は，<a href="explanation.html#c8" target="_blank">こちら</a></p>
+							</div>
+						</div>
+
+						<br>
+						<button class="btn" id="checkAnswerBtn1">答え合わせをする</button>
+						<button class="btn" id="retryBtn1" style="display: none;">もう一度挑戦する</button>
+
+						<img id="omedeto1" src="images/homekid.png" alt=" " width="200" style="display: none;" />
+						<img id="zannen1" src="images/ningen.png" alt=" " width="200" style="display: none;" />
+
+					</div>
+
+					<h3>クイズ2（チェックリストのオプション項目に対応した4問）</h3>
+					<button class="btn" id="startBtn2">クイズスタート</button>
+
+					<div id="quizContainer2" style="display: none;" class="sage">
+
+						<div id="q2_1_1question" style="display: none;">
+							<h4>Q1</h4>
+							<p>次の学習意欲を高めるアイディアの内，ARCSモデルの「注意（Attention）」に関連すると考えられるものを<span
+									class="underline">すべて</span>選びなさい。</p>
+							<div id="q2_1_1options">
+
+								<div><label><input type="checkbox" name="q2_1_1"
+											class="correct">教材の表紙の目立つ位置に，学習の理由と学習の効果を短い文章で記載し，学習者が教材を手に取った時に「やってみたい」と興味を持ってもらえるようにする。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→○（A-1 知覚的喚起）</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q2_1_1"
+											class="correct">教材は，教師役と学生役のキャラクターが対話しながら進行する形式にし，学生役の疑問やつまずきに答える構成とすることで，学習者も学生役のキャラクターと同様に「どうやって？」という疑問（好奇心）を抱けるように工夫する。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→○（A-2 探求心の喚起）</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q2_1_1"
+											class="incorrect">学習目標，教材内容，練習問題，テストは整合性を保ち，公平な評価を行う。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×（S-3 公平感）</p>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="frame explanation" style="display: none;">
+								<p><strong class="answer2_1_1"></strong></p>
+								<p>「注意（Attention）」についての解説は，<a href="explanation.html#o1_1" target="_blank">こちら</a></p>
+							</div>
+						</div>
+
+						<div id="q2_1_2question" style="display: none;">
+							<h4>Q1</h4>
+							<p>次の学習意欲を高めるアイディアの内，ARCSモデルの「注意（Attention）」に関連すると考えられるものを<span
+									class="underline">すべて</span>選びなさい。</p>
+							<div id="q2_1_2options">
+
+								<div><label><input type="checkbox" name="q2_1_2"
+											class="correct">重要な手順を説明するときは，文章で長々と説明するのではなく，視覚的に分かりやすいフローチャートを記載する。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→○（A-1 知覚的喚起）</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q2_1_2"
+											class="correct">キーワードは太字にし，要点のまとめなど重要な箇所は枠で囲むなど，レイアウトを工夫する。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→○（A-3 変化性）</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q2_1_2"
+											class="incorrect">授業で学んだ内容（既有知識やスキル）と教材でこれから学ぶ内容がリンクするようにする。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×（R-3 親しみやすさ）</p>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="frame explanation" style="display: none;">
+								<p><strong class="answer2_1_2"></strong></p>
+								<p>「注意（Attention）」についての解説は，<a href="explanation.html#o1_1" target="_blank">こちら</a></p>
+							</div>
+						</div>
+
+						<div id="q2_2_1question" style="display: none;">
+							<h4>Q2</h4>
+							<p>次の学習意欲を高めるアイディアの内，ARCSモデルの「関連性（Relevance）」に関連すると考えられるものを<span
+									class="underline">すべて</span>選びなさい。</p>
+							<div id="q2_2_1options">
+
+								<div><label><input type="checkbox" name="q2_2_1"
+											class="correct">「先生や先輩にとっての情報検索とは？」というコラム欄を設ける。教員からの「普段，このように情報検索を行って研究しています」という話や，先輩の「最初は何も分からなかったけれど，この教材を使ってノウハウを学び，今は卒論を執筆しています」といった経験談を掲載する。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→○（R-2 動機との一致）</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q2_2_1"
+											class="correct">授業で学んだ内容（既有知識やスキル）と教材でこれから学ぶ内容がリンクするようにする。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→○（R-3 親しみやすさ）</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q2_2_1"
+											class="incorrect">教材の導入部分で学習目標を知らせる。さらに，事後テストは事前テストと同じ形式であることを伝え，最終的に何ができなければならないのか，ゴールを明確に示す。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×（C-1 学習要件）</p>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="frame explanation" style="display: none;">
+								<p><strong class="answer2_2_1"></strong></p>
+								<p>「関連性（Relevance）」についての解説は，<a href="explanation.html#o1_2" target="_blank">こちら</a></p>
+							</div>
+						</div>
+
+						<div id="q2_2_2question" style="display: none;">
+							<h4>Q2</h4>
+							<p>次の学習意欲を高めるアイディアの内，ARCSモデルの「関連性（Relevance）」に関連すると考えられるものを<span
+									class="underline">すべて</span>選びなさい。</p>
+							<div id="q2_2_2options">
+
+								<div><label><input type="checkbox" name="q2_2_2"
+											class="correct">教材の導入部分では，学習の期待される効果（例えば，「教材の内容をマスターすれば，レポートや論文執筆の際の情報収集に役立つ」など）を説明する。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→○（R-1 目的指向性）</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q2_2_2"
+											class="incorrect">章ごとに中間目標を設け，確認問題を掲載することで，「何ができるようになったか」を学習者自身が都度確認，意識できるようにする。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×（C-2 成功の機会）</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q2_2_2"
+											class="incorrect">事後テストに合格した場合は，学習目標を達成したことを褒めるコメントが表示されるようにする。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×（S-2 外発的な報酬）</p>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="frame explanation" style="display: none;">
+								<p><strong class="answer2_2_2"></strong></p>
+								<p>「関連性（Relevance）」についての解説は，<a href="explanation.html#o1_2" target="_blank">こちら</a></p>
+							</div>
+						</div>
+
+						<div id="q2_3_1question" style="display: none;">
+							<h4>Q3</h4>
+							<p>次の学習意欲を高めるアイディアの内，ARCSモデルの「自信（Confidence）」に関連すると考えられるものを<span
+									class="underline">すべて</span>選びなさい。</p>
+							<div id="q2_3_1options">
+
+								<div><label><input type="checkbox" name="q2_3_1"
+											class="correct">章ごとに中間目標を設け，確認問題を掲載することで，「何ができるようになったか」を学習者自身が都度確認，意識できるようにする。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→○（C-2 成功の機会）</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q2_3_1"
+											class="incorrect">キーワードは太字にし，要点のまとめなど重要な箇所は枠で囲むなど，レイアウトを工夫する。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×（A-3 変化性）</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q2_3_1"
+											class="incorrect">教材の導入部分では，学習の期待される効果（例えば，「教材の内容をマスターすれば，レポートや論文執筆の際の情報収集に役立つ」など）を説明する。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×（R-1 目的指向性）</p>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="frame explanation" style="display: none;">
+								<p><strong class="answer2_3_1"></strong></p>
+								<p>「自信（Confidence）」についての解説は，<a href="explanation.html#o1_3" target="_blank">こちら</a></p>
+							</div>
+						</div>
+
+						<div id="q2_3_2question" style="display: none;">
+							<h4>Q3</h4>
+							<p>次の学習意欲を高めるアイディアの内，ARCSモデルの「自信（Confidence）」に関連すると考えられるものを<span
+									class="underline">すべて</span>選びなさい。</p>
+							<div id="q2_3_2options">
+
+								<div><label><input type="checkbox" name="q2_3_2"
+											class="correct">教材の導入部分で学習目標を知らせる。さらに，事後テストは事前テストと同じ形式であることを伝え，最終的に何ができなければならないのか，ゴールを明確に示す。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→○（C-1 学習要件）</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q2_3_2"
+											class="correct">教材の各章の目標を確認して重点的に学習する箇所を定めたり，確認テストを先に受験して解説パートを飛ばしたりするなど，学習の進め方をある程度学習者に委ねる。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→○（C-3 個人的なコントロール）</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q2_3_2"
+											class="incorrect">教員と連携し，教材を使って新たに学んだことをできるだけ早く別の場面（授業やレポート執筆など）で使用する機会を与える。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×（S-1 内発的な強化）</p>
+									</div>
+								</div>
+
+							</div>
+							<div class="frame explanation" style="display: none;">
+								<p><strong class="answer2_3_2"></strong></p>
+								<p>「自信（Confidence）」についての解説は，<a href="explanation.html#o1_3" target="_blank">こちら</a></p>
+							</div>
+						</div>
+
+						<div id="q2_4_1question" style="display: none;">
+							<h4>Q4</h4>
+							<p>次の学習意欲を高めるアイディアの内，ARCSモデルの「満足感（Satisfaction）」に関連すると考えられるものを<span
+									class="underline">すべて</span>選びなさい。</p>
+							<div id="q2_4_1options">
+
+								<div><label><input type="checkbox" name="q2_4_1"
+											class="correct">教員と連携し，教材を使って新たに学んだことをできるだけ早く別の場面（授業やレポート執筆など）で使用する機会を与える。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→○（S-1 内発的な強化）</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q2_4_1"
+											class="correct">事後テストに合格した場合は，学習目標を達成したことを褒めるコメントが表示されるようにする。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→○（S-2 外発的な報酬）</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q2_4_1"
+											class="incorrect">教材の各章の目標を確認して重点的に学習する箇所を定めたり，確認テストを先に受験して解説パートを飛ばしたりするなど，学習の進め方をある程度学習者に委ねる。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×（C-3 個人的なコントロール）</p>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="frame explanation" style="display: none;">
+								<p><strong class="answer2_4_1"></strong></p>
+								<p>「満足感（Satisfaction）」についての解説は，<a href="explanation.html#o1_4" target="_blank">こちら</a>
+								</p>
+							</div>
+						</div>
+
+						<div id="q2_4_2question" style="display: none;">
+							<h4>Q4</h4>
+							<p>次の学習意欲を高めるアイディアの内，ARCSモデルの「満足感（Satisfaction）」に関連すると考えられるものを<span
+									class="underline">すべて</span>選びなさい。</p>
+							<div id="q2_4_2options">
+
+								<div><label><input type="checkbox" name="q2_4_2"
+											class="correct">テストには，明確な評価条件と合格基準を設け，採点者の主観で合否が変わるような不公平な状況は起こらないようにする。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→○（S-3 公平感）</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q2_4_2"
+											class="incorrect">教材は，教師役と学生役のキャラクターが対話しながら進行する形式にし，学生役の疑問やつまずきに答える構成とすることで，学習者も学生役のキャラクターと同様に「どうやって？」という疑問（好奇心）を抱けるように工夫する。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×（A-2 探求心の喚起）</p>
+									</div>
+								</div>
+
+								<div><label><input type="checkbox" name="q2_4_2"
+											class="incorrect">「先生や先輩にとっての情報検索とは？」というコラム欄を設ける。教員からの「普段，このように情報検索を行って研究しています」という話や，先輩の「最初は何も分からなかったけれど，この教材を使ってノウハウを学び，今は卒論を執筆しています」といった経験談を掲載する。</label>
+									<div class="each_explanation" style="display: none;">
+										<p>→×（R-2 動機との一致）</p>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="frame explanation" style="display: none;">
+								<p><strong class="answer2_4_2"></strong></p>
+								<p>「満足感（Satisfaction）」についての解説は，<a href="explanation.html#o1_4" target="_blank">こちら</a>
+								</p>
+							</div>
+						</div>
+
+						<br>
+						<button class="btn" id="checkAnswerBtn2">答え合わせをする</button>
+						<button class="btn" id="retryBtn2" style="display: none;">もう一度挑戦する</button>
+
+						<img id="omedeto2" src="images/homekid.png" alt=" " width="200" style="display: none;" />
+						<img id="zannen2" src="images/ningen.png" alt=" " width="200" style="display: none;" />
+
+					</div>
+
+					<script src="js/quiz.js"></script>
 
 				</article>
 			</section>
@@ -72,7 +856,7 @@
 		<div class="inner">
 			<section class="gridWrapper">
 				<article class="grid copyright">
-					&copy; 2023 Chieri Komazaki
+					&copy; 2024 Chieri Komazaki
 				</article>
 			</section>
 		</div>
