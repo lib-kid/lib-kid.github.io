@@ -94,6 +94,9 @@ $(function () {
         // 答え合わせボタンを表示させる
         checkAnswerBtn1.disabled = false;
 
+        // 最初の問題に戻る
+        location.replace("quiz.html#quiz1");
+
         // 「もう一度挑戦する」を消す
         $('#retryBtn1').hide();
 
@@ -204,6 +207,9 @@ $(function () {
 
         // 答え合わせボタンを表示させる
         checkAnswerBtn2.disabled = false;
+
+        // 最初の問題に戻る
+        location.replace("quiz.html#quiz2");
 
         // 「もう一度挑戦する」を消す
         $('#retryBtn2').hide();
